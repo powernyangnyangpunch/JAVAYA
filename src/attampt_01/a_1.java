@@ -8,8 +8,9 @@ public class a_1 {
 		a = 2;
 		b = 3;
 		sum = a + b;
-		System.out.println(a + "¿Í" + b + "ÀÇ ÇÕÀº " + sum + "ÀÔ´Ï´Ù.");
+		System.out.println(a + "ì™€" + b + "ì˜ í•©ì€ " + sum + "ì…ë‹ˆë‹¤.");
 		
+
 	}
 
 }
