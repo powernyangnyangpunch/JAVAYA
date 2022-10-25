@@ -8,7 +8,7 @@ public class a_1 {
 		a = 2;
 		b = 3;
 		sum = a + b;
-		System.out.println(a + "와" + b + "의 합은 " + sum + "입니다.");
+		System.out.println(a + "와 " + b + "의 합은 " + sum + "입니다.");
 		
 
 	}
