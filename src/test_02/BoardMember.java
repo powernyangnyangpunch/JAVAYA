@@ -3,15 +3,16 @@ package test_02;
 import lombok.Data;
 
 @Data
-public class boardMember {
+public class BoardMember {
+	private String name;
 	private String id;
 	private String pw;
-	private String name;
-	public boardMember(String id, String pw, String name) {
+	
+	public BoardMember(String name, String id, String pw) {
 		
+		this.name = name;
 		this.id = id;
 		this.pw = pw;
-		this.name = name;
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -21,7 +22,7 @@ public class boardMember {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		boardMember other = (boardMember) obj;
+		BoardMember other = (BoardMember) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -36,6 +37,10 @@ public class boardMember {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-	
+	public BoardMember(String id, String pw) {
+		
+		this.id = id;
+		this.pw = pw;
+	}
 	
 }
