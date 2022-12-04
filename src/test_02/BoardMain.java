@@ -34,7 +34,7 @@ public class BoardMain {
 				
 				int index = memberList.indexOf(member);
 				if(index == -1) {
-					continue;
+					printStr("아이디 혹은 비밀번호가 잘못되었습니다.");
 				}
 				BoardMember a = memberList.get(index);
 				
@@ -69,12 +69,12 @@ public class BoardMain {
 				
 				printStr("수정할 게시글의 번호를 입력해주세요.");
 				number = scan.nextInt();
-				scan.nextInt();
+				scan.nextLine();
 				Board c = new Board(number);
 				index = boardList.indexOf(c);
 				if(index == -1) {
 					System.out.println(number +"번의 게시물은 존재하지 않습니다.");
-					continue;
+					break;
 				}
 				MemberAndBoard b = MABList.get(index);
 				printStr("ID를 입력해주세요.");
@@ -82,7 +82,7 @@ public class BoardMain {
 				printStr("password를 입력해주세요.");
 				pw = scan.nextLine();
 				MemberAndBoard d = new MemberAndBoard(id, pw);
-				if(b.getPw().equals(d.getPw())) {
+				if(b.getId().equals(d.getId())) {
 					Board tmp = boardList.get(index);
 					
 					System.out.print("수정할 게시글 유형 : ");
@@ -94,6 +94,8 @@ public class BoardMain {
 					
 				
 					tmp.update(type, title, contents);
+				}else {
+					printStr("게시글 등록자가 아닙니다.");
 				}
 				
 				break;
